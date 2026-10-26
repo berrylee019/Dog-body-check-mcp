@@ -23,6 +23,10 @@ from pydantic import Field
 from starlette.requests import Request
 from starlette.responses import PlainTextResponse
 
+import os
+KAKAO_REST_API_KEY = os.environ.get("KAKAO_REST_API_KEY")
+# 절대 os.environ.get("...")에 기본값으로 키 문자열 넣지 마
+
 SERVICE = "Dog Body Check(반려견 체형·수명 체크)"
 
 mcp = FastMCP(
